@@ -73,6 +73,7 @@ class Counter extends React.Component {
         <div onClick={this.resetCounter} style={{border: "1px solid red"}}>
             <div>Current timer state: {this.toMMSS(currentNumber)}</div>
             <div>It will count until: {this.toMMSS(to)}</div>
+            <div>{to-currentNumber}</div>
             {message}
         </div>
         );
