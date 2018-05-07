@@ -1,24 +1,231 @@
-.welcome {
-  color: #0f0f0f;
-  font-size: 3rem;
-  text-align: center;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg); }
-  .welcome .username {
-    font-weight: normal; }
-
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  font: Op; }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   margin: 0; }
 
 main {
-  width: 80%;
-  margin: 4rem auto 0;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: #d7d7d7; }
+  margin: 0 auto 0;
+  background: #ffffff; }
+
+.LaunchDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ffffff;
+  padding: 8rem 4rem; }
+
+.LaunchDetails_Header {
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #ccac5b;
+  margin-bottom: 2rem;
+  margin-top: 8rem;
+  font-size: 1.5rem;
+  letter-spacing: 1rem; }
+
+.LaunchDetails_info {
+  margin-top: 2rem;
+  font-size: 1.35rem;
+  letter-spacing: .15rem; }
+
+.LaunchDetails_Parameters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.LaunchDetails_ColumnParameters {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  border-left: dotted #a7a9ac;
+  padding-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.LaunchDetails_Header--first {
+  margin-top: 0; }
+
+.LaunchDetails_DateName {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%; }
+
+.LaunchDetails_Details {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%; }
+
+.LaunchDetails_date {
+  color: #a7a9ac;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem; }
+
+.LaunchDetails_name {
+  padding-top: 2rem;
+  font-size: 4rem;
+  text-transform: uppercase; }
+
+.LaunchDetails_icon img {
+  max-width: 250px;
+  width: 100%;
+  padding-top: 3rem; }
+
+.LaunchDetails_Header {
+  color: #ccac5b; }
+
+.LaunchCounter {
+  font-size: 1.5rem; }
+
+.Parameter {
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1em;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem; }
+  .Parameter:first-child {
+    padding-top: 0; }
+
+.Parameter_Key {
+  color: #a7a9ac;
+  padding-right: 0.6rem; }
+
+.Parameters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.Parameters_ColumnParameters {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  border-left: dotted #a7a9ac;
+  padding-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.TopNav .TopNav_image {
+  width: 20%; }
+
+.TopNav {
+  background-color: #0f1112;
+  position: relative;
+  text-align: center;
+  padding: 2rem 0; }
+
+.TopNav_GoBack {
+  position: absolute;
+  left: 7rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #ccac5b;
+  margin-left: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1.2rem; }
+
+.TopNav_arrow {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.MissionLinks_image {
+  width: 100%; }
+
+.MissionLinks {
+  position: relative; }
+
+.MissionLinks_container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white; }
+
+.MissionLinks_title {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+  letter-spacing: 0.5rem; }
+
+.MissionLinks_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%; }
+
+.MissionLinks_button {
+  font-size: 1.4rem;
+  border: 1px solid white;
+  padding: 0.8rem 3.6rem;
+  border-radius: 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  margin-right: 2rem; }
+  .MissionLinks_button:last-child {
+    margin-right: 0; }
+
+.Footer {
+  padding: 4rem 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #22272b; }
+
+.Footer_elem {
+  padding-right: 1.6rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: .2rem;
+  font-size: 1.5rem; }
+  .Footer_elem:first-child {
+    color: #a7a9ac; }
+  .Footer_elem:last-child {
+    color: #a7a9ac;
+    padding-right: 0;
+    margin-left: auto; }
 
 
 /*# sourceMappingURL=main.css.map*/
