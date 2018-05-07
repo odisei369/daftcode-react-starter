@@ -15,7 +15,7 @@ class Footer extends React.Component{
         <a href="#" className="Footer_elem">YOUTUBE</a>
         <a href="#" className="Footer_elem">FLICKR</a>
         <a href="#" className="Footer_elem">INSTAGRAM</a>
-        <div className="Footer_elem Footer_elem-last">2018 SPACE EXPLORATION TECHNOLOGIES CORP. </div>
+        <div className="Footer_elem">2018 SPACE EXPLORATION TECHNOLOGIES CORP. </div>
 
 
     </div>)

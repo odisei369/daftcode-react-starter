@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './Parameters.sass';
 import Parameter from './Parameter';
 
+import { format } from 'date-fns';
+
 class Parameters extends React.Component{
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class Parameters extends React.Component{
            <Parameter parameter_key="MASS" parameter_value={`${rocket.mass.kg}KG / ${rocket.mass.lb}LB`}/>
          </div>
          <div className="Parameters_ColumnParameters">
-           <Parameter parameter_key="FIRST FLIGHT" parameter_value={rocket.first_flight}/>
+           <Parameter parameter_key="FIRST FLIGHT" parameter_value={format(new Date(rocket.first_flight), 'DD MMMM YYYY')}/>
            <Parameter parameter_key="COUNTRY" parameter_value={rocket.country}/>
            <Parameter parameter_key="SUCCESS RATE" parameter_value={`${rocket.success_rate_pct}%`}/>
            <Parameter parameter_key="COST PER LAUNCH" parameter_value={`$${rocket.cost_per_launch}`}/>

@@ -10,7 +10,7 @@ class MissionLinks extends React.Component{
     const launch = this.props.launch;
     return (
     <div className="MissionLinks">
-        <img className="MissionLinks_image" src={require("../assets/img/rocket.png")}/>
+        <img className="MissionLinks_image" src={require("../../assets/img/rocket.png")}/>
         <div className="MissionLinks_container">
             <div className="MissionLinks_title">MISSION LINKS</div>
             <div className="MissionLinks_buttons">
