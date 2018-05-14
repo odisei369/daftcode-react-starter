@@ -11,13 +11,13 @@ class TopNav extends React.Component{
   render(){
     return <div className="TopNav">
             <div onClick={this.props.onBackClick}>
-              <img className="TopNav_arrow" src={arrow}/>
+              <img className="TopNav_arrow" src="https://i.imgur.com/P4rmqME.png"/>
               <div className="TopNav_GoBack">
                 GO BACK
               </div>
             </div>
 
-            <img className="TopNav_image" src={image}/>
+            <img className="TopNav_image" src="https://i.imgur.com/OjrPHpq.png"/>
            </div>
   }
 }

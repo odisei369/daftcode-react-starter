@@ -50,8 +50,8 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
 
         <div className="LaunchesList">
             <div className="LaunchesList_Header">
-              <img className="LaunchesList_moonImage" src={planetImage}/>
-              <img className="LaunchesList_logoImage" src={logoImage}/>
+              <img className="LaunchesList_moonImage" src="https://i.imgur.com/HZrTBWr.png"/>
+              <img className="LaunchesList_logoImage" src="https://i.imgur.com/OjrPHpq.png"/>
 
                 <FilterButtons
                     activeFilter={this.state.rocketNameFilter}
