@@ -130,7 +130,7 @@ main {
 
 .FilterButtons {
   position: absolute;
-  top: 75%;
+  top: 80%;
   left: 50%;
   width: 100%;
   -webkit-transform: translate(-50%, -50%);
@@ -157,24 +157,29 @@ main {
     -webkit-box-shadow: inset 0 0 10px white;
             box-shadow: inset 0 0 10px white; }
 
+.FilterButtons_title {
+  letter-spacing: 1.2rem;
+  font-size: 2.6rem; }
+
 .LaunchesList {
   margin: 0;
   background-color: black; }
 
 .LaunchesList_Header {
-  position: relative; }
+  position: relative;
+  padding-bottom: 10rem; }
 
 .LaunchesList_moonImage {
   width: 80%;
   margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 2rem;
   display: block; }
 
 .LaunchesList_logoImage {
   position: absolute;
-  width: 50%;
-  top: 50%;
-  left: 50%;
+  width: 40%;
+  top: 60%;
+  left: 54%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2; }
