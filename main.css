@@ -128,6 +128,132 @@ main {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+.FilterButtons {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  text-align: center; }
+
+.FilterButtons_filters {
+  padding-top: 5rem; }
+
+.FilterButtons_button {
+  cursor: pointer;
+  font-size: 1.4rem;
+  border: 1px solid white;
+  padding: 0.8rem 3.6rem;
+  border-radius: 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  margin-right: 2rem; }
+  .FilterButtons_button:last-child {
+    margin-right: 0; }
+  .FilterButtons_button--active {
+    -webkit-box-shadow: inset 0 0 10px white;
+            box-shadow: inset 0 0 10px white; }
+
+.LaunchesList {
+  margin: 0;
+  background-color: black; }
+
+.LaunchesList_Header {
+  position: relative; }
+
+.LaunchesList_moonImage {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: block; }
+
+.LaunchesList_logoImage {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2; }
+
+.LaunchesList_List {
+  padding: 2rem 2rem;
+  position: relative;
+  margin: 0;
+  list-style-type: none; }
+
+.LaunchesList_List::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  border-left: 3px dotted #666666;
+  background-color: black;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: 3px; }
+
+.LaunchesList_List li {
+  cursor: pointer;
+  position: relative;
+  color: white;
+  padding: 2rem 0; }
+  .LaunchesList_List li:nth-child(even) {
+    text-align: right; }
+    .LaunchesList_List li:nth-child(even):before {
+      content: '';
+      position: absolute;
+      width: 46%;
+      height: 2px;
+      background-color: #ccac5b;
+      z-index: 1;
+      right: 0;
+      top: 5rem; }
+  .LaunchesList_List li:nth-child(odd):before {
+    content: '';
+    position: absolute;
+    width: 46%;
+    height: 2px;
+    background-color: #ccac5b;
+    z-index: 1;
+    left: 0;
+    top: 5rem; }
+  .LaunchesList_List li:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    -webkit-transform: translate(1px, 1px);
+            transform: translate(1px, 1px);
+    left: 50%;
+    background-color: #666666;
+    border: 2px solid #666666;
+    top: 4.6rem;
+    border-radius: 50%;
+    z-index: 1; }
+
+.LauchesList_date {
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.6rem;
+  position: relative; }
+
+.LauchesList_info {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem; }
+
+.LauchesList_infoTitle {
+  color: #a7a9ac; }
+
+.LauchesList_infoValue {
+  padding-left: 0.3rem;
+  padding-right: 0.5rem; }
+
 .TopNav .TopNav_image {
   width: 20%; }
 
@@ -202,6 +328,7 @@ main {
     margin-right: 0; }
 
 .Footer {
+  margin: 0;
   padding: 4rem 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
