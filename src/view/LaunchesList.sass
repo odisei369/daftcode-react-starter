@@ -1,0 +1,100 @@
+.LaunchesList
+    margin: 0
+    background-color: black
+
+.LaunchesList_Header
+    position: relative
+
+.LaunchesList_moonImage
+    width: 80%
+    margin: 0 auto
+    padding-top: 5rem
+    display: block
+
+.LaunchesList_logoImage
+    position: absolute
+    width: 50%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 2
+
+
+.LaunchesList_List
+    padding: 2rem 2rem
+    position: relative;
+    margin: 0
+    list-style-type: none;
+
+.LaunchesList_List::after
+    content: '';
+    position: absolute;
+    width: 0px;
+    border-left: 3px dotted #666666
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: 3px;
+
+
+.LaunchesList_List li
+    cursor: pointer
+    position: relative
+    color: white
+    padding: 2rem 0
+    &:nth-child(even)
+        text-align: right
+        &:before
+            content: ''
+            position: absolute
+            width: 46%
+            height: 2px
+            background-color: #ccac5b
+            z-index: 1
+            right: 0
+            top: 5rem
+    &:nth-child(odd)
+        &:before
+            content: ''
+            position: absolute
+            width: 46%
+            height: 2px
+            background-color: #ccac5b
+            z-index: 1
+            left: 0
+            top: 5rem
+    &:after
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        transform: translate(1px, 1px)
+        left: 50%
+        background-color: #666666;
+        border: 2px solid #666666;
+        top: 4.6rem;
+        border-radius: 50%;
+        z-index: 1;
+
+.LauchesList_date
+    text-transform: uppercase
+    padding-bottom: 2rem
+    font-size: 1.4rem
+    letter-spacing: 0.6rem
+    position: relative
+    &:after
+
+
+.LauchesList_info
+    text-transform: uppercase
+    font-size: 1.2rem
+    letter-spacing: 0.1rem
+
+.LauchesList_infoTitle
+    color: #a7a9ac
+
+.LauchesList_infoValue
+
+    padding-left: 0.3rem
+    padding-right: 0.5rem

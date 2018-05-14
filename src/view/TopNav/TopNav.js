@@ -1,6 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './TopNav.sass';
+import arrow from "../../assets/img/arrow_left.png";
+import image from "../../assets/img/space_x_logo_bw_centered.png"
 
 class TopNav extends React.Component{
   constructor(props) {
@@ -8,11 +10,14 @@ class TopNav extends React.Component{
   }
   render(){
     return <div className="TopNav">
-            <img className="TopNav_arrow" src={require("../../assets/img/arrow_left.png")}/>
-            <div className="TopNav_GoBack">
-              GO BACK
+            <div onClick={this.props.onBackClick}>
+              <img className="TopNav_arrow" src={arrow}/>
+              <div className="TopNav_GoBack">
+                GO BACK
+              </div>
             </div>
-            <img className="TopNav_image" src={require("../../assets/img/space_x_logo_bw_centered.png")}/>
+
+            <img className="TopNav_image" src={image}/>
            </div>
   }
 }
