@@ -4,6 +4,7 @@ import FilterButtons from './FilterButtons';
 import planetImage from '../assets/img/moon.png';
 import logoImage from '../assets/img/space_x_logo_bw_centered.png'
 import { format } from 'date-fns'
+import { RingLoader } from 'react-spinners';
 
 import './LaunchesList.sass';
 
@@ -13,21 +14,50 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
       super(props);
       this.state = {currentNumber: props.from,
                     intervalWorking: true,
-                    rocketNameFilter: ""};
+                    rocketNameFilter: "",
+                    launches: [],
+                    loading: true,
+                    error: false,};
+      this.fetchLaunches("");
       this.handleFilterChange = this.handleFilterChange.bind(this);
-  }
-    get availableRocketNames() {
-      const {launches} = this.props;
+    }
 
+
+    fetchLaunches(rocketName){
+
+      this.setState({ loading: true});
+      fetch(`https://api.spacexdata.com/v2/launches/all?rocket_name=${rocketName}`).then(response => {
+        if (!response.ok){
+          this.setState({ loading: false, error: true});
+          //message that we get error
+        }
+        return response.json();
+      }).then(data => {
+        console.log(data);
+        this.setState({ loading: false, launches: data});
+      }).catch(error => this.setState({ loading: false, error: true}))
+    }
+
+
+
+    get availableRocketNames() {
+      const {launches} = this.state;
+      //Hard coded rocket names
+      return ['Falcon 1', 'Falcon 9', 'Falcon 10', 'Falcon Heavy'];
+
+
+
+      if (!launches){
+        return [];
+      }
       return  launches.map((launch) => launch.rocket.rocket_name)
                                   .filter((elem, pos, arr) => arr.indexOf(elem) == pos);
     }
 
     get filteredLaunches(){
       const {rocketNameFilter} = this.state;
-      const {launches} = this.props;
-
-      if(!rocketNameFilter) return launches;
+      const {launches} = this.state;
+      if(!rocketNameFilter) return launches || [];
 
       return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter );
     }
@@ -39,6 +69,7 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
     }
 
     handleFilterChange(value) {
+      this.fetchLaunches(value);
       this.setState({ rocketNameFilter: value });
     }
 
@@ -46,6 +77,7 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
       console.log(this.availableRocketNames);
       const {onLaunchClick} = this.props;
       const lauchDateFromUnix = this.lauchDateFromUnix;
+
       return (
 
         <div className="LaunchesList">
@@ -59,8 +91,17 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
                     onChange={this.handleFilterChange}
                 />
             </div>
+            <div className="LaunchesList_Spinner">
+              <RingLoader
+                color={'#666666'}
+                loading={this.state.loading}
+              />
+            </div>
+            {this.filteredLaunches.length == 0 && !this.state.loading && !this.state.error? <div className="LaunchesList_notFound">Sorry, no launches found</div> : <div></div>}
+            {this.state.error? <div className="LaunchesList_notFound">Something went wrong</div> : <div></div>}
             <ul className="LaunchesList_List">
-              {this.filteredLaunches.map(function(launch){
+              {this.filteredLaunches?
+                this.filteredLaunches.map(function(launch){
                 return (
                   <li
                     onClick={(e) => onLaunchClick(launch, e)}
@@ -75,7 +116,7 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
 
                   </li>
                 );
-              })}
+              }) : <div>nothing</div>}
             </ul>
         </div>
       );

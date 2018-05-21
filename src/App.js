@@ -8,7 +8,6 @@ import launchSite from 'assets/launch_site.json';
 import rocket from 'assets/rocket.json';
 import LaunchDetails from 'view/LaunchDetails';
 import LaunchesList from 'view/LaunchesList';
-import launches from './assets/launches.json';
 
 import TopNav from 'view/TopNav/TopNav';
 import MissionLinks from 'view/MissionLinks/MissionLinks';
@@ -19,12 +18,14 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     super(props);
     this.state = {
       viewName: 'list',
-      currentLaunch: null
+      currentLaunch: null,
     };
+
 
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
     this.handleBackClick = this.handleBackClick.bind(this);
   }
+
   handleLaunchClick(launch) {
     this.setState({ viewName: 'details',
                     currentLaunch: launch });
@@ -35,13 +36,12 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   }
 
   get activeViewComponent() {
-    const { viewName } = this.state;
+    const { viewName, launches } = this.state;
 
     switch (viewName) {
       case 'list':
         return (
           <LaunchesList
-            launches={launches}
             onLaunchClick={this.handleLaunchClick}
           />
         );
